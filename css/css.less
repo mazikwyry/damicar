@@ -28,6 +28,9 @@
     transition: @speed;
 }
 
+@red: #ce2123;
+@text: #2f2f2f;
+
 body{
 	margin: 0px;
 	background: url("../gfx/bg.jpg");
@@ -37,6 +40,8 @@ body{
 	text-align: center;
 	width: 100%;
 	background-position: center top;
+	font-family: "Open Sans";
+	font-size: 13px;
 }
 
 header{
@@ -44,7 +49,210 @@ header{
 	height: 60px;
 	border-bottom: 1px solid #373737;
 	height: 109px;
-	padding: 15px 0;
+	padding: 22px 0;
 	.box-sizing();
 	background-color: rgba(255,255,255,.3);
+	
+	nav{
+		margin-top: 20px;
+		ul{
+			list-style: none;
+			li{
+				display: inline-block;
+				padding-bottom: 20px;
+				padding-top: 10px;
+				font-size: 16px;
+				margin-left: 40px;
+				.box-sizing();
+				&.current{
+					border-bottom: 2px solid #ce2123;
+				}
+				&:hover{
+					border-bottom: 2px solid #ce2123;
+				}
+			}
+		}
+	}
+}
+
+
+.hero{
+	.box-sizing();
+	height: 438px;
+	border-bottom: 1px solid rgba(0,0,0,.04);
+	padding: 40px 0;
+	position: relative;
+	.hero-text{
+		font-size: 78px;
+		text-align: left;
+		color:#000;
+		text-transform: uppercase;
+		font-family: "Racing Sans One";
+		width: 90%;
+		margin: auto;
+		line-height: 60px;
+		margin-top: 20px;
+		div{
+			text-align: right;
+			color:@red;
+			font-size: 53px;
+		}
+	}
+	.stripline{
+		text-align: center;
+		font-size: 55px;
+		color:#000;
+		font-family: "Allura";
+	}
+	.circle{
+		position: relative;
+		bottom:-30px;
+		margin: auto;
+		border-radius: 100%;
+		background-color: @red;
+		text-align: center;
+		width: 270px;
+		height: 270px;
+		vertical-align: middle;
+		.transition();
+		&::after{
+			content: " ";
+			position: absolute;
+			margin: auto;
+			border-radius: 100%;
+			background-color: transparent;
+			text-align: center;
+			width: 280px;
+			height: 280px;
+			top:-5px;
+			left:-5px;
+			border: 1px solid transparent;
+			.box-sizing();
+			.transition();
+		}
+		&:hover{
+			&::after{
+				width: 300px;
+				height: 300px;
+				top: -15px;
+				left: -15px;
+				border: 1px solid @red;
+			}
+		}
+		img{
+			margin-top: 80px;
+		}
+		.page-title{
+			width: 100%;
+			text-align: center;
+			font-family: "Racing Sans One";
+			position: absolute;
+			top:104px;
+			font-size: 42px;
+			color:#FFF;
+			display: none;
+		}
+
+
+	}
+}
+
+.main{
+	background-color: rgba(255, 255, 255, 0.6);
+	padding: 50px 0 30px 0;
+	text-align: justify;
+	min-height: 620px;
+	
+	.row{
+		.half{
+			padding: 40px 0;
+			height: 260px;
+		}
+		&:first-of-type{
+			.half{
+				padding-top: 100px; 
+				border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+			}
+		}
+	}
+
+	
+	.short{
+		line-height: 14px;
+	}
+
+	h2.short_about{
+		font-size: 40px;
+		font-family: "Racing Sans One";
+		color:@red;
+		line-height: 35px;
+		text-transform: uppercase;
+		text-align: left;
+		span{
+			color: @text;
+		}
+	}
+	.short-img{
+		text-align: right;
+		padding-right: 10px;
+	}
+
+	.smaller-points{
+		border-left: 1px solid rgba(0,0,0,.2);
+		h2.short_about{
+			font-size: 28px;
+			line-height: 22px;
+		}
+		.short-img{
+			text-align: center;
+			padding-right: 0px;
+			img{
+				width: 50%;
+			}
+		}
+	}
+
+}
+
+
+footer{
+	background: url("../gfx/bottom_bg.png");
+	width: 100%;
+	padding: 20px 0;
+	text-align: left;
+	nav{
+		ul{
+			width: 100%;
+			padding: 0px;
+			margin: 0px;
+			li{
+				text-align:left;
+				color: #FFF;
+				padding: 7px 0;
+				font-size: 16px;
+				border-bottom: 1px solid rgba(255,255,255,.6);
+				width: 100%;
+			}
+		}
+	}
+	.contact-detail{
+		font-size: 16px;
+		color:#FFF;
+	}
+
+	.contact-row{
+		margin: 5px 0 0 0;
+		&:first-of-type{
+			margin-top: 10px;
+		}
+	}
+}
+
+
+.white-title{
+	font-size: 29px;
+	font-family: "Racing Sans One";
+	color:#FFF;
+	text-align: left;
+	border-bottom: 1px solid rgba(255,255,255,.6);
 }
